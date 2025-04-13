@@ -27,5 +27,18 @@ class ViewController: UIViewController {
         sample = nil
         
     }
+    
+    @IBAction func domo3(_ sender: Any) {
+        let server = Server()
+        for _ in 0..<100000 {
+            let client = Client(server: server)
+            server.addClient(client)
+        }
+        server.client.removeAll()
+    }
+    
+    
+    
+    
 }
 
