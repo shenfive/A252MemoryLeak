@@ -12,21 +12,23 @@ class MemoryLeakSample{
     var counter = 1
     
     func setClosure(){
-        closure = { [weak self] in
+        closure = {
+            [weak self] in
             self?.doSomeThing()
+//            self.doSomeThing()
         }
         self.doSomeThing()
     }
-//    
-//    func startTimer(){
-//        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-//            self.doSomeThing()
-//            if self == nil{
-//                timer.invalidate()
-//            }
-//        }
-//    }
-//    
+    
+    func startTimer(){
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] timer in
+            self?.doSomeThing()
+            if self == nil{
+                timer.invalidate()
+            }
+        }
+    }
+    
     func doSomeThing(){
         print("counter:\(counter)")
         counter += 1

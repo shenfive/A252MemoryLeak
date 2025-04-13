@@ -22,9 +22,9 @@ class ViewController: UIViewController {
     
     @IBAction func demo2(_ sender: Any) {
         
-//        var sample:MemoryLeakSample? = MemoryLeakSample()
-//        sample?.startTimer()
-//        sample = nil
+        var sample:MemoryLeakSample? = MemoryLeakSample()
+        sample?.startTimer()
+        sample = nil
         
     }
 }
