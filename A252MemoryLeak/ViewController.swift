@@ -14,6 +14,18 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func demo1(_ sender: Any) {
+        var sample:MemoryLeakSample? = MemoryLeakSample()
+        sample?.setClosure()
+        sample = nil
+    }
+    
+    @IBAction func demo2(_ sender: Any) {
+        
+//        var sample:MemoryLeakSample? = MemoryLeakSample()
+//        sample?.startTimer()
+//        sample = nil
+        
+    }
 }
 
